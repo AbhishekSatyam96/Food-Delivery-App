@@ -1,9 +1,36 @@
 import React from 'react';
-import {COLORS, images, SIZES, FONTS} from '../constants';
-import {Text, StyleSheet} from 'react-native'
+import {COLORS, images, SIZES, FONTS, icons} from '../constants';
+import {
+    View, StyleSheet, SafeAreaView, TouchableOpacity, Image
+} from 'react-native'
 
 const Home = () => {
-    return(<Text>ddf</Text>)
+    const renderHeader = () => {
+        return(
+            <View style={{flexDirection: 'row', height: 50}}>
+                <TouchableOpacity
+                    style={{
+                        width: 50,
+                        paddingLeft: SIZES.padding * 2,
+                        justifyContent: 'center'
+                    }}
+                >
+                    <Image
+                        source={icons.nearby}
+                        resizeMode="contain"
+                        style={{
+                            width: 30, height: 30
+                        }}
+                    />
+                </TouchableOpacity>
+            </View>
+        )
+    }
+    return(
+        <SafeAreaView style={styles.container}>
+            {renderHeader()}
+        </SafeAreaView>
+    )
 }
 
 const styles = StyleSheet.create({
