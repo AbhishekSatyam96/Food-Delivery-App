@@ -114,7 +114,7 @@ const restaurantData = [
     },
     {
         id: 2,
-        name: "ByProgrammers Pizza",
+        name: "Dominos Pizza",
         rating: 4.8,
         categories: [2, 4, 6],
         priceRating: expensive,
@@ -165,7 +165,7 @@ const restaurantData = [
     },
     {
         id: 3,
-        name: "ByProgrammers Hotdogs",
+        name: "Patna Fries",
         rating: 4.8,
         categories: [3],
         priceRating: expensive,
@@ -192,7 +192,7 @@ const restaurantData = [
     },
     {
         id: 4,
-        name: "ByProgrammers Sushi",
+        name: "Best Sushi",
         rating: 4.8,
         categories: [8],
         priceRating: expensive,
@@ -219,7 +219,7 @@ const restaurantData = [
     },
     {
         id: 5,
-        name: "ByProgrammers Cuisine",
+        name: "Satyam Cuisine",
         rating: 4.8,
         categories: [1, 2],
         priceRating: affordable,
@@ -272,7 +272,7 @@ const restaurantData = [
     {
 
         id: 6,
-        name: "ByProgrammers Dessets",
+        name: "Keshav Dessets",
         rating: 4.9,
         categories: [9, 10],
         priceRating: affordable,

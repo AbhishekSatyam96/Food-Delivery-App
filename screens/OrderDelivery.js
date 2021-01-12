@@ -1,8 +1,17 @@
 import React from 'react';
-import {Text} from 'react-native'
+import {Text, View} from 'react-native'
 
 const OrderDelivery = () => {
-    return(<Text>ddf</Text>)
+
+    const renderMap = () => {
+        
+    }
+
+    return(
+        <View style={{flex: 1}}>
+            {renderMap()}
+        </View>
+    )
 }
 
 export default OrderDelivery;
