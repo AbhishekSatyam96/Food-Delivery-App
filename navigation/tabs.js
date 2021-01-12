@@ -3,7 +3,6 @@ import {View, Image, TouchableOpacity} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {icons, COLORS} from '../constants'; 
 import Home from "../screens/Home";
-import Resturant from '../screens/Resturant';
 
 const Tab = createBottomTabNavigator();
 
@@ -39,7 +38,7 @@ const Tabs = () => {
             />
             <Tab.Screen
                 name="Search"
-                component={Resturant}
+                component={Home}
                 options={{
                     tabBarIcon: ({focused}) => (
                         <Image
