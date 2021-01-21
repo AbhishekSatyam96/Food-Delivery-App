@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Text, StyleSheet, SafeAreaView, View, TouchableOpacity, Image, Animated } from 'react-native'
-import { Extrapolate } from 'react-native-reanimated';
 import { COLORS, SIZES, FONTS, icons, dummyData } from '../constants';
 
 const Resturant = ({ route, navigation }) => {

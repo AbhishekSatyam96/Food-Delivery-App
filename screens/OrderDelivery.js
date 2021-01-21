@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import {Text, View, FlatList} from 'react-native'
+import {Text, View, FlatList, TouchableOpacity, Image} from 'react-native'
+import { COLORS, SIZES, FONTS, icons, dummyData } from '../constants';
 
 const OrderDelivery = ({route}) => {
 
@@ -10,7 +11,71 @@ const OrderDelivery = ({route}) => {
     useEffect(() => {
         setRes(route.params.resturant)
     },[])
-    console.log("route...",res);
+
+    const renderHeader = () => {
+        return (
+            <View
+                style={{
+                    flexDirection: 'row'
+                }}
+            >
+                <TouchableOpacity
+                    style={{
+                        width: 50,
+                        paddingLeft: SIZES.padding * 2,
+                        justifyContent: 'center',
+                    }}
+                    onPress={() => navigation.goBack()}
+                >
+                    <Image
+                        source={icons.back}
+                        resizeMode='contain'
+                        style={{
+                            width: 30,
+                            height: 30
+                        }}
+                    />
+                </TouchableOpacity>
+                <View
+                    style={{
+                        flex: 1,
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                    }}
+                >
+                    <View
+                        style={{
+                            height: 50,
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            paddingHorizontal: SIZES.padding * 3,
+                            borderRadius: SIZES.radius,
+                            backgroundColor: COLORS.lightGray3
+                        }}
+                    >
+                        <Text style={{ ...FONTS.h3 }}>{res?.name}</Text>
+                    </View>
+                </View>
+                <TouchableOpacity
+                    style={{
+                        width: 50,
+                        paddingRight: SIZES.padding * 2,
+                        justifyContent: 'center'
+                    }}
+                >
+                    <Image
+                        source={icons.list}
+                        resizeMode='contain'
+                        style={{
+                            width: 30,
+                            height: 30
+                        }}
+                    />
+                </TouchableOpacity>
+            </View>
+        )
+    }
+
     const renderItem = ({item, index}) => {
         return(
             <Text
@@ -26,6 +91,7 @@ const OrderDelivery = ({route}) => {
     return(
         <View style={{flex: 1}}>
             {/* {renderMap()} */}
+            {renderHeader()}
             <View
                 style={{
                     flex: 1,
@@ -42,7 +108,7 @@ const OrderDelivery = ({route}) => {
                <FlatList
                     data={res.menu}
                     renderItem={renderItem}
-                    // keyExtractor={item => 1  }
+                    keyExtractor={item => item.name}
                 />
                 <Text
                     style={{
@@ -62,7 +128,7 @@ const OrderDelivery = ({route}) => {
                         color: 'red',
                         alignItems: 'center',
                         justifyContent: 'center'
-                    }}>Currentlt, We are providing COD only. Within 30 min we will reach your address</Text>
+                    }}>Currently, We are providing COD only. Within 30 min we will reach your address</Text>
             </View>
         </View>
     )
