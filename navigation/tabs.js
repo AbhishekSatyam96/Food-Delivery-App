@@ -1,14 +1,14 @@
 import React from 'react';
-import {View, Image, TouchableOpacity} from 'react-native';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {icons, COLORS} from '../constants'; 
+import { Image } from 'react-native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { icons, COLORS } from '../constants';
 import Home from "../screens/Home";
 
 const Tab = createBottomTabNavigator();
 
 
 const Tabs = () => {
-    return(
+    return (
         <Tab.Navigator
             tabBarOptions={{
                 // showLabel: false,
@@ -23,7 +23,7 @@ const Tabs = () => {
                 name="Home"
                 component={Home}
                 options={{
-                    tabBarIcon: ({focused}) => (
+                    tabBarIcon: ({ focused }) => (
                         <Image
                             source={icons.cutlery}
                             resizeMode='contain'
@@ -40,7 +40,7 @@ const Tabs = () => {
                 name="Search"
                 component={Home}
                 options={{
-                    tabBarIcon: ({focused}) => (
+                    tabBarIcon: ({ focused }) => (
                         <Image
                             source={icons.search}
                             resizeMode='contain'
@@ -57,7 +57,7 @@ const Tabs = () => {
                 name="Like"
                 component={Home}
                 options={{
-                    tabBarIcon: ({focused}) => (
+                    tabBarIcon: ({ focused }) => (
                         <Image
                             source={icons.like}
                             resizeMode='contain'
@@ -74,7 +74,7 @@ const Tabs = () => {
                 name="User"
                 component={Home}
                 options={{
-                    tabBarIcon: ({focused}) => (
+                    tabBarIcon: ({ focused }) => (
                         <Image
                             source={icons.user}
                             resizeMode='contain'
